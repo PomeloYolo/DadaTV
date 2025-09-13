@@ -53,9 +53,9 @@ export function UpdateModal() {
 
   const getButtonText = () => {
     if (downloading) {
-      return `下载中 ${downloadProgress}%`;
+      return `下載中 ${downloadProgress}%`;
     } else if (downloadedPath) {
-      return "立即安装";
+      return "立即安裝";
     } else {
       return "立即更新";
     }
@@ -65,10 +65,10 @@ export function UpdateModal() {
     <Modal visible={showUpdateModal} transparent animationType="fade" onRequestClose={handleLater}>
       <View style={styles.overlay}>
         <View style={styles.container}>
-          <ThemedText style={styles.title}>发现新版本</ThemedText>
+          <ThemedText style={styles.title}>發現新版本</ThemedText>
 
           <View style={styles.versionInfo}>
-            <ThemedText style={styles.versionText}>当前版本: v{currentVersion}</ThemedText>
+            <ThemedText style={styles.versionText}>目前版本: v{currentVersion}</ThemedText>
             <ThemedText style={styles.arrow}>→</ThemedText>
             <ThemedText style={[styles.versionText, styles.newVersion]}>新版本: v{remoteVersion}</ThemedText>
           </View>
@@ -102,11 +102,11 @@ export function UpdateModal() {
             {!downloading && !downloadedPath && (
               <>
                 <StyledButton ref={laterButtonRef} onPress={handleLater} variant="primary" style={styles.button}>
-                  <ThemedText style={[styles.buttonText]}>稍后再说</ThemedText>
+                  <ThemedText style={[styles.buttonText]}>稍後再說</ThemedText>
                 </StyledButton>
 
                 <StyledButton ref={skipButtonRef} onPress={handleSkip} variant="primary" style={styles.button}>
-                  <ThemedText style={[styles.buttonText]}>跳过此版本</ThemedText>
+                  <ThemedText style={[styles.buttonText]}>跳過此版本</ThemedText>
                 </StyledButton>
               </>
             )}
