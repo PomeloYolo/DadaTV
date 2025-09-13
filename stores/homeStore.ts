@@ -28,8 +28,8 @@ export interface Category {
 
 const initialCategories: Category[] = [
   { title: "最近播放", type: "record" },
-  { title: "热门剧集", type: "tv", tag: "热门" },
-  { title: "电视剧", type: "tv", tags: ["国产剧", "美剧", "英剧", "韩剧", "日剧", "港剧", "日本动画", "动画"] },
+  { title: "熱門劇集", type: "tv", tag: "热门" },
+  { title: "電視劇", type: "tv", tags: ["国产剧", "美剧", "英剧", "韩剧", "日剧", "港剧", "日本动画", "动画"] },
   {
     title: "电影",
     type: "movie",
@@ -248,22 +248,22 @@ const useHomeStore = create<HomeState>((set, get) => ({
         set({ hasMore: false });
       }
     } catch (err: any) {
-      let errorMessage = "加载失败，请重试";
+      let errorMessage = "加載失敗，請重試";
 
       if (err.message === "API_URL_NOT_SET") {
-        errorMessage = "请点击右上角设置按钮，配置您的服务器地址";
+        errorMessage = "請點選右上角設定按鈕，配置您的伺服器位址";
       } else if (err.message === "UNAUTHORIZED") {
-        errorMessage = "认证失败，请重新登录";
+        errorMessage = "認證失敗，請重新登入";
       } else if (err.message.includes("Network")) {
-        errorMessage = "网络连接失败，请检查网络连接";
+        errorMessage = "網路連線失敗，請檢查網路連接";
       } else if (err.message.includes("timeout")) {
-        errorMessage = "请求超时，请检查网络或服务器状态";
+        errorMessage = "請求逾時，請檢查網路或伺服器狀態";
       } else if (err.message.includes("404")) {
-        errorMessage = "服务器API路径不正确，请检查服务器配置";
+        errorMessage = "伺服器API路徑不正確，請檢查伺服器配置";
       } else if (err.message.includes("500")) {
-        errorMessage = "服务器内部错误，请联系管理员";
+        errorMessage = "伺服器內部錯誤，請聯絡管理員";
       } else if (err.message.includes("403")) {
-        errorMessage = "访问被拒绝，请检查权限设置";
+        errorMessage = "訪問被拒絕，請檢查權限設置";
       }
 
       set({ error: errorMessage });
