@@ -76,24 +76,24 @@ export const useVideoHandlers = ({
       console.error(`[SSL_ERROR] SSL certificate validation failed for URL: ${currentEpisode.url}`);
       Toast.show({ 
         type: "error", 
-        text1: "SSL证书错误，正在尝试其他播放源...",
-        text2: "请稍候"
+        text1: "SSL驗證錯誤，正在嘗試其他播放源...",
+        text2: "請稍候"
       });
       usePlayerStore.getState().handleVideoError('ssl', currentEpisode.url);
     } else if (isNetworkError) {
       console.error(`[NETWORK_ERROR] Network connection failed for URL: ${currentEpisode.url}`);
       Toast.show({ 
         type: "error", 
-        text1: "网络连接失败，正在尝试其他播放源...",
-        text2: "请稍候"
+        text1: "網路連接錯誤，正在嘗試其他播放源...",
+        text2: "請稍候"
       });
       usePlayerStore.getState().handleVideoError('network', currentEpisode.url);
     } else {
       console.error(`[VIDEO_ERROR] Other video error for URL: ${currentEpisode.url}`);
       Toast.show({ 
         type: "error", 
-        text1: "视频播放失败，正在尝试其他播放源...",
-        text2: "请稍候"
+        text1: "影片播放失敗，正在嘗試其他播放源...",
+        text2: "請稍候"
       });
       usePlayerStore.getState().handleVideoError('other', currentEpisode.url);
     }
