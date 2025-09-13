@@ -23,7 +23,7 @@ const useFavoritesStore = create<FavoritesState>((set) => ({
       //   favoritesArray.sort((a, b) => (b.save_time || 0) - (a.save_time || 0));
       set({ favorites: favoritesArray, loading: false });
     } catch (e) {
-      const error = e instanceof Error ? e.message : "获取收藏列表失败";
+      const error = e instanceof Error ? e.message : "取得收藏清單失敗";
       set({ error, loading: false });
     }
   },
