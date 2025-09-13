@@ -120,7 +120,7 @@ export default function LiveScreen() {
       >
         <View style={dynamicStyles.modalContainer}>
           <View style={dynamicStyles.modalContent}>
-            <Text style={dynamicStyles.modalTitle}>选择频道</Text>
+            <Text style={dynamicStyles.modalTitle}>選擇頻道</Text>
             <View style={dynamicStyles.listContainer}>
               <View style={dynamicStyles.groupColumn}>
                 <FlatList
