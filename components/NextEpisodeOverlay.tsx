@@ -16,7 +16,7 @@ export const NextEpisodeOverlay: React.FC<NextEpisodeOverlayProps> = ({ visible,
   return (
     <View style={styles.nextEpisodeOverlay}>
       <View style={styles.nextEpisodeContent}>
-        <ThemedText style={styles.nextEpisodeTitle}>即将播放下一集...</ThemedText>
+        <ThemedText style={styles.nextEpisodeTitle}>即將播放下一集...</ThemedText>
         <StyledButton
           text="取消"
           onPress={onCancel}
