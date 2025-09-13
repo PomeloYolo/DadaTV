@@ -56,7 +56,7 @@ export default function FavoritesScreen() {
         renderItem={renderItem}
         loading={loading}
         error={error}
-        emptyMessage="暂无收藏"
+        emptyMessage="哎呀，這裡是空的，趕快去收藏影片吧"
       />
     </>
   );
