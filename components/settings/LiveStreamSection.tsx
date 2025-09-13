@@ -88,7 +88,7 @@ export const LiveStreamSection = forwardRef<LiveStreamSectionRef, LiveStreamSect
           <View style={styles.titleContainer}>
             <ThemedText style={styles.sectionTitle}>直播源地址</ThemedText>
             {remoteInputEnabled && serverUrl && (
-              <ThemedText style={styles.subtitle}>用手机访问 {serverUrl}，可远程输入</ThemedText>
+              <ThemedText style={styles.subtitle}>用手機訪問 {serverUrl}，可遠端輸入</ThemedText>
             )}
           </View>
           <Animated.View style={inputAnimationStyle}>
