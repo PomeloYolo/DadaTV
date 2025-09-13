@@ -107,7 +107,7 @@ class TCPHttpServer {
     }
 
     if (!ipAddress) {
-      throw new Error('无法获取IP地址，请确认设备已连接到WiFi或以太网。');
+      throw new Error('無法獲取IP地址，請確認設備已連接到WiFi或乙太網路。');
     }
 
     if (this.isRunning) {
