@@ -82,7 +82,7 @@ export const useUpdateStore = create<UpdateState>((set, get) => ({
         Toast.show({
           type: 'success',
           text1: '已是最新版本',
-          text2: `当前版本 v${updateService.getCurrentVersion()} 已是最新版本`,
+          text2: `目前版本 v${updateService.getCurrentVersion()} 已是最新版本`,
           visibilityTime: 3000,
         });
       }
@@ -93,9 +93,9 @@ export const useUpdateStore = create<UpdateState>((set, get) => ({
         Date.now().toString()
       );
     } catch (error) {
-      // console.info('检查更新失败:', error);
+      // console.info('檢查更新失敗:', error);
       set({ 
-        error: error instanceof Error ? error.message : '检查更新失败',
+        error: error instanceof Error ? error.message : '檢查更新失敗',
         updateAvailable: false,
         isLatestVersion: false,
       });
@@ -107,7 +107,7 @@ export const useUpdateStore = create<UpdateState>((set, get) => ({
     const { downloadUrl } = get();
     
     if (!downloadUrl) {
-      set({ error: '下载地址无效' });
+      set({ error: '下載地址失敗' });
       return;
     }
 
@@ -131,11 +131,11 @@ export const useUpdateStore = create<UpdateState>((set, get) => ({
         downloadProgress: 100,
       });
     } catch (error) {
-      // console.info('下载失败:', error);
+      // console.info('下載失敗:', error);
       set({ 
         downloading: false,
         downloadProgress: 0,
-        error: error instanceof Error ? error.message : '下载失败',
+        error: error instanceof Error ? error.message : '下載失敗',
       });
     }
   },
@@ -145,7 +145,7 @@ export const useUpdateStore = create<UpdateState>((set, get) => ({
     const { downloadedPath } = get();
     
     if (!downloadedPath) {
-      set({ error: '安装文件不存在' });
+      set({ error: '安裝文件不存在' });
       return;
     }
 
@@ -154,9 +154,9 @@ export const useUpdateStore = create<UpdateState>((set, get) => ({
       // 安装开始后，关闭弹窗
       set({ showUpdateModal: false });
     } catch (error) {
-      logger.error('安装失败:', error);
+      logger.error('安裝失敗:', error);
       set({ 
-        error: error instanceof Error ? error.message : '安装失败',
+        error: error instanceof Error ? error.message : '安裝失敗',
       });
     }
   },
@@ -203,6 +203,6 @@ export const initUpdateStore = async () => {
       skipVersion: skipVersion || null,
     });
   } catch (error) {
-    logger.error('初始化更新存储失败:', error);
+    logger.error('初始化更新存儲失敗:', error);
   }
 };
