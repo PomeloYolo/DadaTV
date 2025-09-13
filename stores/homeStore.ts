@@ -49,6 +49,8 @@ const initialCategories: Category[] = [
       "科幻",
       "悬疑",
       "恐怖",
+      "治癒",
+      "亲子",
     ],
   },
   { title: "综艺", type: "tv", tag: "综艺" },
