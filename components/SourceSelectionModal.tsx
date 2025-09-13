@@ -38,7 +38,7 @@ export const SourceSelectionModal: React.FC = () => {
     <Modal visible={showSourceModal} transparent={true} animationType="slide" onRequestClose={onClose}>
       <View style={styles.modalContainer}>
         <View style={styles.modalContent}>
-          <Text style={styles.modalTitle}>选择播放源</Text>
+          <Text style={styles.modalTitle}>選擇播放源</Text>
           <FlatList
             data={searchResults}
             numColumns={3}
