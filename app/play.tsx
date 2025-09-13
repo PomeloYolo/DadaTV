@@ -197,7 +197,7 @@ export default function PlayScreen() {
       timeoutId = setTimeout(() => {
         if (usePlayerStore.getState().isLoading) {
           usePlayerStore.setState({ isLoading: false });
-          Toast.show({ type: "error", text1: "播放超时，请重试" });
+          Toast.show({ type: "error", text1: "播放超時，請重試" });
         }
       }, 60000); // 1 minute
     }
