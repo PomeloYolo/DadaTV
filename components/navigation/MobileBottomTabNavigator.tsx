@@ -14,11 +14,11 @@ interface TabItem {
 }
 
 const tabs: TabItem[] = [
-  { key: 'home', label: '首页', icon: Home, route: '/' },
+  { key: 'home', label: '首頁', icon: Home, route: '/' },
   { key: 'search', label: '搜索', icon: Search, route: '/search' },
   { key: 'live', label: '直播', icon: Tv, route: '/live' },
   { key: 'favorites', label: '收藏', icon: Heart, route: '/favorites' },
-  { key: 'settings', label: '设置', icon: Settings, route: '/settings' },
+  { key: 'settings', label: '設置', icon: Settings, route: '/settings' },
 ];
 
 const MobileBottomTabNavigator: React.FC = () => {
