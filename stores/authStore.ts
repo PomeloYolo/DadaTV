@@ -52,7 +52,7 @@ const useAuthStore = create<AuthState>((set) => ({
       if (!serverConfig?.StorageType) {
         // Only show error if we're not loading and have tried to fetch the config
         if (!settingsState.isLoadingServerConfig) {
-          Toast.show({ type: "error", text1: "请检查网络或者服务器地址是否可用" });
+          Toast.show({ type: "error", text1: "請檢查網路或伺服器位置是否可用" });
         }
         return;
       }
