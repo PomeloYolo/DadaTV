@@ -4,6 +4,8 @@ import Toast from "react-native-toast-message";
 import { version as currentVersion } from "../package.json";
 import { UPDATE_CONFIG } from "../constants/UpdateConfig";
 import Logger from '@/utils/Logger';
+import InstallApk from 'react-native-install-apk';
+import { Linking } from 'react-native';
 
 const logger = Logger.withTag('UpdateService');
 
@@ -160,43 +162,36 @@ class UpdateService {
     throw new Error("Maximum retry attempts exceeded for download");
   }
 
-  async installApk(filePath: string): Promise<void> {
-    try {
-      // 首先检查文件是否存在
-      const exists = await ReactNativeBlobUtil.fs.exists(filePath);
-      if (!exists) {
-        throw new Error(`APK file not found: ${filePath}`);
-      }
 
-      // 使用FileViewer打开APK文件进行安装
-      // 这会触发Android的包安装器
-      await FileViewer.open(filePath, {
-        showOpenWithDialog: true, // 显示选择应用对话框
-        showAppsSuggestions: true, // 显示应用建议
-        displayName: "OrionTV Update",
-      });
-    } catch (error) {
-      logger.info("Error installing APK:", error);
-      
-      // 提供更详细的错误信息
-      if (error instanceof Error) {
-        if (error.message.includes('No app found')) {
-          Toast.show({ type: "error", text1: "安裝失敗", text2: "未找到可安裝APK的应用，請確保允許安裝未知来源的應用" });
-          throw new Error('未找到可安装APK的應用，請確保允許安裝未知来源的應用');
-        } else if (error.message.includes('permission')) {
-          Toast.show({ type: "error", text1: "安装失敗", text2: "沒有安裝權限，請在設置中允許此應用程式安裝權限" });
-          throw new Error('沒有安裝權限，請在設定中允許此應用程式安裝未知來源的應用');
-        } else {
-          Toast.show({ type: "error", text1: "安装失敗", text2: "APK安裝過程中出现錯誤" });
+    async installApk(filePath: string): Promise<void> {
+      try {
+        // 先確認檔案存在
+        const exists = await ReactNativeBlobUtil.fs.exists(filePath);
+        if (!exists) throw new Error('安裝檔不存在');
+
+        // Android 8 以上需要允許安裝未知來源
+        const canInstall = await InstallApk.canRequestPackageInstalls?.();
+        if (canInstall === false) {
+          // 跳到設定頁面讓用戶允許安裝未知來源
+          Linking.openSettings();
+          throw new Error('請允許安裝未知來源的應用');
         }
-      } else {
-        Toast.show({ type: "error", text1: "安装失敗", text2: "APK安裝過程中出現未知錯誤" });
-      }
-      
-      throw error;
-    }
-  }
 
+        // 開始安裝 APK
+        InstallApk.install(filePath);
+
+      } catch (error) {
+        logger.info("Error installing APK:", error);
+
+        Toast.show({
+          type: 'error',
+          text1: '安裝失敗',
+          text2: error instanceof Error ? error.message : 'APK 安裝過程中出現錯誤',
+        });
+
+        throw error;
+      }
+    }
   compareVersions(v1: string, v2: string): number {
     const parts1 = v1.split(".").map(Number);
     const parts2 = v2.split(".").map(Number);
