@@ -68,7 +68,7 @@ export default function LivePlayer({ streamUrl, channelTitle, onPlaybackStatusUp
   if (!streamUrl) {
     return (
       <View style={styles.container}>
-        <Text style={styles.messageText}>按向下键选择频道</Text>
+        <Text style={styles.messageText}>按下鍵選擇播放來源</Text>
       </View>
     );
   }
@@ -76,7 +76,7 @@ export default function LivePlayer({ streamUrl, channelTitle, onPlaybackStatusUp
   if (isTimeout) {
     return (
       <View style={styles.container}>
-        <Text style={styles.messageText}>加载失败，请重试</Text>
+        <Text style={styles.messageText}>加載失敗，請重試</Text>
       </View>
     );
   }
@@ -100,7 +100,7 @@ export default function LivePlayer({ streamUrl, channelTitle, onPlaybackStatusUp
       {isLoading && (
         <View style={styles.loadingOverlay}>
           <ActivityIndicator size="large" color="#fff" />
-          <Text style={styles.messageText}>加载中...</Text>
+          <Text style={styles.messageText}>加載中...</Text>
         </View>
       )}
       {channelTitle && !isLoading && !isTimeout && (
