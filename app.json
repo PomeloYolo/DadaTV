@@ -34,8 +34,8 @@
     "experiments": {
       "typedRoutes": true
     },
-    "name": "OrionTV",
-    "slug": "OrionTV",
+    "name": "DadaTV",
+    "slug": "DadaTV-mine",
     "orientation": "default",
     "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "dark",
@@ -43,7 +43,7 @@
       "**/*"
     ],
     "android": {
-      "package": "com.oriontv",
+      "package": "com.dadatv",
       "usesCleartextTraffic": true,
       "hardwareAcceleration": true,
       "networkSecurityConfig": "@xml/network_security_config",
@@ -59,7 +59,7 @@
           "action": "VIEW",
           "data": [
             {
-              "scheme": "oriontv"
+              "scheme": "dadatv"
             }
           ],
           "category": [
@@ -70,7 +70,7 @@
       ]
     },
     "ios": {
-      "bundleIdentifier": "com.oriontv",
+      "bundleIdentifier": "com.dadatv",
       "supportsTablet": true,
       "requireFullScreen": false,
       "supportedInterfaceOrientations": [
@@ -83,13 +83,13 @@
         "usesNonExemptEncryption": false
       }
     },
-    "scheme": "oriontv",
+    "scheme": "dadatv",
     "extra": {
       "router": {
         "origin": false
       },
       "eas": {
-        "projectId": "b4eddfdb-08cb-4ffc-828d-a27f493e10f7"
+        "projectId": "61d1bf61-d2b8-40b2-96e9-cbfeb7bacafa"
       }
     }
   }
