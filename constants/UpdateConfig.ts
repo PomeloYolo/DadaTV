@@ -1,6 +1,6 @@
 export const UPDATE_CONFIG = {
   // 自动检查更新
-  AUTO_CHECK: true,
+  AUTO_CHECK: false,
 
   // 检查更新间隔（毫秒）
   CHECK_INTERVAL: 12 * 60 * 60 * 1000, // 12小时
@@ -11,7 +11,7 @@ export const UPDATE_CONFIG = {
 
   // 获取平台特定的下载URL
   getDownloadUrl(version: string): string {
-    return `https://ghfast.top/https://github.com/orion-lib/OrionTV/releases/download/v${version}/orionTV.${version}.apk`;
+    return `https://ghfast.top/https://github.com/PomeloYolo/DadaTV/releases/download/v${version}/DadaTV.${version}.apk`;
   },
 
   // 是否显示更新日志
