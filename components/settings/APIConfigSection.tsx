@@ -89,7 +89,7 @@ export const APIConfigSection = forwardRef<APIConfigSectionRef, APIConfigSection
           <View style={styles.titleContainer}>
             <ThemedText style={styles.sectionTitle}>API 地址</ThemedText>
             {!hideDescription && remoteInputEnabled && serverUrl && (
-              <ThemedText style={styles.subtitle}>用手机访问 {serverUrl}，可远程输入</ThemedText>
+              <ThemedText style={styles.subtitle}>用手機訪問 {serverUrl}，可遠端輸入</ThemedText>
             )}
           </View>
           <Animated.View style={inputAnimationStyle}>
@@ -98,7 +98,7 @@ export const APIConfigSection = forwardRef<APIConfigSectionRef, APIConfigSection
               style={[styles.input, isInputFocused && styles.inputFocused]}
               value={apiBaseUrl}
               onChangeText={handleUrlChange}
-              placeholder="输入服务器地址"
+              placeholder="輸入伺服器地址"
               placeholderTextColor="#888"
               autoCapitalize="none"
               autoCorrect={false}
