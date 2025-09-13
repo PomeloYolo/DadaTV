@@ -273,7 +273,7 @@ const useDetailStore = create<DetailState>((set, get) => ({
       // 最终检查：如果所有搜索都完成但仍然没有结果
       if (finalState.searchResults.length === 0 && !finalState.error) {
         logger.error(`[ERROR] All search attempts completed but no results found for "${q}"`);
-        set({ error: `未找到 "${q}" 的播放源，请检查标题拼写或稍后重试` });
+        set({ error: `未找到 "${q}" 的播放源，檢查標題拼寫或稍後重試` });
       } else if (finalState.searchResults.length > 0) {
         logger.info(`[SUCCESS] DetailStore.init completed successfully with ${finalState.searchResults.length} sources`);
       }
