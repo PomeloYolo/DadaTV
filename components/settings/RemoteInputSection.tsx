@@ -63,7 +63,7 @@ export const RemoteInputSection: React.FC<RemoteInputSectionProps> = ({ onChange
      >
       <Pressable style={styles.settingItem} onFocus={handleSectionFocus} onBlur={handleSectionBlur}>
         <View style={styles.settingInfo}>
-          <ThemedText style={styles.settingName}>启用远程输入</ThemedText>
+          <ThemedText style={styles.settingName}>啟用遠端輸入</ThemedText>
         </View>
         <Animated.View style={animationStyle}>
           <Switch
@@ -79,22 +79,22 @@ export const RemoteInputSection: React.FC<RemoteInputSectionProps> = ({ onChange
       {remoteInputEnabled && (
         <View style={styles.statusContainer}>
           <View style={styles.statusItem}>
-            <ThemedText style={styles.statusLabel}>服务状态：</ThemedText>
+            <ThemedText style={styles.statusLabel}>服務狀態：</ThemedText>
             <ThemedText style={[styles.statusValue, { color: isServerRunning ? Colors.dark.primary : "#FF6B6B" }]}>
-              {isServerRunning ? "运行中" : "已停止"}
+              {isServerRunning ? "運行中" : "已停止"}
             </ThemedText>
           </View>
 
           {serverUrl && (
             <View style={styles.statusItem}>
-              <ThemedText style={styles.statusLabel}>访问地址：</ThemedText>
+              <ThemedText style={styles.statusLabel}>訪問地址：</ThemedText>
               <ThemedText style={styles.statusValue}>{serverUrl}</ThemedText>
             </View>
           )}
 
           {error && (
             <View style={styles.statusItem}>
-              <ThemedText style={styles.statusLabel}>错误：</ThemedText>
+              <ThemedText style={styles.statusLabel}>錯誤：</ThemedText>
               <ThemedText style={[styles.statusValue, { color: "#FF6B6B" }]}>{error}</ThemedText>
             </View>
           )}
