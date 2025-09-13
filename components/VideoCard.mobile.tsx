@@ -87,7 +87,7 @@ const VideoCardMobile = forwardRef<View, VideoCardMobileProps>(
 
       longPressTriggered.current = true;
 
-      Alert.alert("删除观看记录", `确定要删除"${title}"的观看记录吗？`, [
+      Alert.alert("刪除觀看紀錄", `確定要刪除"${title}"的觀看紀錄嗎？`, [
         {
           text: "取消",
           style: "cancel",
@@ -101,7 +101,7 @@ const VideoCardMobile = forwardRef<View, VideoCardMobileProps>(
               onRecordDeleted?.();
             } catch (error) {
               logger.info("Failed to delete play record:", error);
-              Alert.alert("错误", "删除观看记录失败，请重试");
+              Alert.alert("錯誤", "刪除觀看紀錄失敗，請重試");
             }
           },
         },
@@ -135,7 +135,7 @@ const VideoCardMobile = forwardRef<View, VideoCardMobileProps>(
             {isContinueWatching && (
               <View style={styles.continueWatchingBadge}>
                 <Play size={12} color="#ffffff" fill="#ffffff" />
-                <Text style={styles.continueWatchingText}>继续</Text>
+                <Text style={styles.continueWatchingText}>繼續</Text>
               </View>
             )}
 
