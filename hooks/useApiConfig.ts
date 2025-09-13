@@ -47,25 +47,25 @@ export const useApiConfig = () => {
           error: null,
         });
       } catch (error) {
-        let errorMessage = '服务器连接失败';
+        let errorMessage = '伺服器連接失敗';
         
         if (error instanceof Error) {
           switch (error.message) {
             case 'API_URL_NOT_SET':
-              errorMessage = 'API地址未设置';
+              errorMessage = 'API地址未設置';
               break;
             case 'UNAUTHORIZED':
-              errorMessage = '服务器认证失败';
+              errorMessage = '伺服器認證失敗';
               break;
             default:
               if (error.message.includes('Network')) {
-                errorMessage = '网络连接失败，请检查网络或服务器地址';
+                errorMessage = '網路連接失敗，請檢查網路或伺服器地址';
               } else if (error.message.includes('timeout')) {
-                errorMessage = '连接超时，请检查服务器地址';
+                errorMessage = '連接超時，請檢查伺服器地址';
               } else if (error.message.includes('404')) {
-                errorMessage = '服务器地址无效，请检查API路径';
+                errorMessage = '伺服器地址無效，請檢查API路徑';
               } else if (error.message.includes('500')) {
-                errorMessage = '服务器内部错误';
+                errorMessage = '伺服器内部錯誤';
               }
               break;
           }
@@ -101,7 +101,7 @@ export const useApiConfig = () => {
         setValidationState(prev => ({ 
           ...prev, 
           isValid: false, 
-          error: prev.error || '无法获取服务器配置' 
+          error: prev.error || '無法獲取伺服器配置' 
         }));
       }
     }
@@ -120,7 +120,7 @@ export const useApiConfig = () => {
 
 export const getApiConfigErrorMessage = (status: ApiConfigStatus): string => {
   if (status.needsConfiguration) {
-    return '请点击右上角设置按钮，配置您的服务器地址';
+    return '請點擊設置按鈕，配置您的伺服器地址';
   }
   
   if (status.error) {
@@ -128,11 +128,11 @@ export const getApiConfigErrorMessage = (status: ApiConfigStatus): string => {
   }
   
   if (status.isValidating) {
-    return '正在验证服务器配置...';
+    return '正在驗證伺服器配置...';
   }
   
   if (status.isValid === false) {
-    return '服务器配置验证失败，请检查设置';
+    return '伺服器配置驗證失敗，請檢查設置';
   }
   
   return '加载失败，请重试';
