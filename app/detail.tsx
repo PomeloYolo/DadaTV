@@ -77,7 +77,7 @@ export default function DetailScreen() {
 
     return (
       <ResponsiveNavigation>
-        <ResponsiveHeader title="详情" showBackButton />
+        <ResponsiveHeader title="詳情" showBackButton />
         {content}
       </ResponsiveNavigation>
     );
@@ -86,7 +86,7 @@ export default function DetailScreen() {
   if (!detail) {
     const content = (
       <ThemedView style={[commonStyles.safeContainer, commonStyles.center]}>
-        <ThemedText type="subtitle">未找到详情信息</ThemedText>
+        <ThemedText type="subtitle">未找到詳細訊息</ThemedText>
       </ThemedView>
     );
 
@@ -96,7 +96,7 @@ export default function DetailScreen() {
 
     return (
       <ResponsiveNavigation>
-        <ResponsiveHeader title="详情" showBackButton />
+        <ResponsiveHeader title="詳情" showBackButton />
         {content}
       </ResponsiveNavigation>
     );
@@ -223,7 +223,7 @@ export default function DetailScreen() {
           <View style={dynamicStyles.bottomContainer}>
             <View style={dynamicStyles.sourcesContainer}>
               <View style={dynamicStyles.sourcesTitleContainer}>
-                <ThemedText style={dynamicStyles.sourcesTitle}>选择播放源 共 {searchResults.length} 个</ThemedText>
+                <ThemedText style={dynamicStyles.sourcesTitle}>選擇播放源 共 {searchResults.length} 个</ThemedText>
                 {!allSourcesLoaded && <ActivityIndicator style={{ marginLeft: 10 }} />}
               </View>
               <View style={dynamicStyles.sourceList}>
@@ -288,7 +288,7 @@ export default function DetailScreen() {
 
   return (
     <ResponsiveNavigation>
-      <ResponsiveHeader title={detail?.title || "详情"} showBackButton />
+      <ResponsiveHeader title={detail?.title || "詳情"} showBackButton />
       {content}
     </ResponsiveNavigation>
   );
