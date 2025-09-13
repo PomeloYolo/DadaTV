@@ -16,7 +16,7 @@ interface NavigationItem {
 const navigationItems: NavigationItem[] = [
   {
     name: 'home',
-    label: '首页',
+    label: '首頁',
     icon: Home,
     route: '/',
   },
@@ -40,7 +40,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'settings',
-    label: '设置',
+    label: '設置',
     icon: Settings,
     route: '/settings',
   },
