@@ -119,13 +119,13 @@ const ResponsiveVideoCard = forwardRef<View, VideoCardProps>(
       longPressTriggered.current = true;
 
       // Show confirmation dialog to delete play record
-      Alert.alert("删除观看记录", `确定要删除"${title}"的观看记录吗？`, [
+      Alert.alert("刪除觀看紀錄", `確定要刪除"${title}"的觀看紀錄嗎？`, [
         {
           text: "取消",
           style: "cancel",
         },
         {
-          text: "删除",
+          text: "刪除",
           style: "destructive",
           onPress: async () => {
             try {
@@ -142,7 +142,7 @@ const ResponsiveVideoCard = forwardRef<View, VideoCardProps>(
               }
             } catch (error) {
               logger.info("Failed to delete play record:", error);
-              Alert.alert("错误", "删除观看记录失败，请重试");
+              Alert.alert("錯誤", "刪除观看紀錄失敗，請重試");
             }
           },
         },
@@ -217,7 +217,7 @@ const ResponsiveVideoCard = forwardRef<View, VideoCardProps>(
                 {isContinueWatching && (
                   <View style={dynamicStyles.continueWatchingBadge}>
                     <Play size={responsiveConfig.deviceType === 'tv' ? 16 : 12} color="#ffffff" fill="#ffffff" />
-                    <ThemedText style={dynamicStyles.continueWatchingText}>继续观看</ThemedText>
+                    <ThemedText style={dynamicStyles.continueWatchingText}>繼續觀看</ThemedText>
                   </View>
                 )}
               </View>
