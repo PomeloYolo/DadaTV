@@ -58,7 +58,7 @@ const LoginModal = () => {
   const handleLogin = async () => {
     const isLocalStorage = serverConfig?.StorageType === "localstorage";
     if (!password || (!isLocalStorage && !username)) {
-      Toast.show({ type: "error", text1: "请输入用户名和密码" });
+      Toast.show({ type: "error", text1: "請輸入用戶名和密碼" });
       return;
     }
     setIsLoading(true);
@@ -70,20 +70,20 @@ const LoginModal = () => {
       // Save credentials on successful login
       await LoginCredentialsManager.save({ username, password });
       
-      Toast.show({ type: "success", text1: "登录成功" });
+      Toast.show({ type: "success", text1: "登入成功" });
       hideLoginModal();
 
       // Show disclaimer alert after successful login
       Alert.alert(
-        "免责声明",
-        "本应用仅提供影视信息搜索服务，所有内容均来自第三方网站。本站不存储任何视频资源，不对任何内容的准确性、合法性、完整性负责。",
-        [{ text: "确定" }]
+        "免責聲明",
+        "本應用僅提供影視訊息搜索服務，所有内容均来自第三方網站。本網站不存儲任何影視資源，不對任何内容的準確性、合法性、完整性負責。",
+        [{ text: "確定" }]
       );
     } catch (error) {
       Toast.show({
         type: "error",
-        text1: "登录失败",
-        text2: error instanceof Error ? error.message : "用户名或密码错误",
+        text1: "登入失敗",
+        text2: error instanceof Error ? error.message : "用戶名或密碼錯誤",
       });
     } finally {
       setIsLoading(false);
@@ -104,13 +104,13 @@ const LoginModal = () => {
     >
       <View style={styles.overlay}>
         <ThemedView style={styles.container}>
-          <ThemedText style={styles.title}>需要登录</ThemedText>
-          <ThemedText style={styles.subtitle}>服务器需要验证您的身份</ThemedText>
+          <ThemedText style={styles.title}>需要登入</ThemedText>
+          <ThemedText style={styles.subtitle}>伺服器需要驗證您的身份</ThemedText>
           {serverConfig?.StorageType !== "localstorage" && (
             <TextInput
               ref={usernameInputRef}
               style={styles.input}
-              placeholder="请输入用户名"
+              placeholder="請輸入用戶名"
               placeholderTextColor="#888"
               value={username}
               onChangeText={setUsername}
@@ -122,7 +122,7 @@ const LoginModal = () => {
           <TextInput
             ref={passwordInputRef}
             style={styles.input}
-            placeholder="请输入密码"
+            placeholder="請輸入密碼"
             placeholderTextColor="#888"
             secureTextEntry
             value={password}
@@ -131,7 +131,7 @@ const LoginModal = () => {
             onSubmitEditing={handleLogin}
           />
           <StyledButton
-            text={isLoading ? "" : "登录"}
+            text={isLoading ? "" : "登入"}
             onPress={handleLogin}
             disabled={isLoading}
             style={styles.button}
