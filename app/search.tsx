@@ -71,10 +71,10 @@ export default function SearchScreen() {
       if (response.results.length > 0) {
         setResults(response.results);
       } else {
-        setError("没有找到相关内容");
+        setError("沒有找到相關內容");
       }
     } catch (err) {
-      setError("搜索失败，请稍后重试。");
+      setError("搜索失敗，請稍後重試。");
       logger.info("Search failed:", err);
     } finally {
       setLoading(false);
@@ -85,9 +85,9 @@ export default function SearchScreen() {
 
   const handleQrPress = () => {
     if (!remoteInputEnabled) {
-      Alert.alert("远程输入未启用", "请先在设置页面中启用远程输入功能", [
+      Alert.alert("遠端輸入未啟用", "請先在設置介面中啟用遠端輸入功能", [
         { text: "取消", style: "cancel" },
-        { text: "去设置", onPress: () => router.push("/settings") },
+        { text: "設置", onPress: () => router.push("/settings") },
       ]);
       return;
     }
@@ -125,7 +125,7 @@ export default function SearchScreen() {
           <TextInput
             ref={textInputRef}
             style={dynamicStyles.input}
-            placeholder="搜索电影、剧集..."
+            placeholder="搜索電影、劇集..."
             placeholderTextColor="#888"
             value={keyword}
             onChangeText={setKeyword}
@@ -157,7 +157,7 @@ export default function SearchScreen() {
           renderItem={renderItem}
           loading={loading}
           error={error}
-          emptyMessage="输入关键词开始搜索"
+          emptyMessage="輸入關鍵字開始搜索"
         />
       )}
       <RemoteControlModal />
