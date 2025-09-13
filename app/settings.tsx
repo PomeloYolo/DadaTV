@@ -77,7 +77,7 @@ export default function SettingsScreen() {
         text1: "保存成功",
       });
     } catch {
-      Alert.alert("错误", "保存设置失败");
+      Alert.alert("錯誤", "保存設置失敗");
     } finally {
       setIsLoading(false);
     }
@@ -185,7 +185,7 @@ export default function SettingsScreen() {
       <ThemedView style={[commonStyles.container, dynamicStyles.container]}>
         {deviceType === "tv" && (
           <View style={dynamicStyles.header}>
-            <ThemedText style={dynamicStyles.title}>设置</ThemedText>
+            <ThemedText style={dynamicStyles.title}>設置</ThemedText>
           </View>
         )}
 
@@ -206,7 +206,7 @@ export default function SettingsScreen() {
 
         <View style={dynamicStyles.footer}>
           <StyledButton
-            text={isLoading ? "保存中..." : "保存设置"}
+            text={isLoading ? "保存中..." : "保存設置"}
             onPress={handleSave}
             variant="primary"
             disabled={!hasChanges || isLoading}
@@ -225,7 +225,7 @@ export default function SettingsScreen() {
 
   return (
     <ResponsiveNavigation>
-      <ResponsiveHeader title="设置" showBackButton />
+      <ResponsiveHeader title="設置" showBackButton />
       {renderSettingsContent()}
     </ResponsiveNavigation>
   );
