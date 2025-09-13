@@ -251,7 +251,7 @@ const usePlayerStore = create<PlayerState>((set, get) => ({
         await videoRef?.current?.replayAsync();
       } catch (error) {
         logger.debug("Failed to replay video:", error);
-        Toast.show({ type: "error", text1: "播放失败" });
+        Toast.show({ type: "error", text1: "播放失敗" });
       }
     }
   },
@@ -267,7 +267,7 @@ const usePlayerStore = create<PlayerState>((set, get) => ({
         }
       } catch (error) {
         logger.debug("Failed to toggle play/pause:", error);
-        Toast.show({ type: "error", text1: "操作失败" });
+        Toast.show({ type: "error", text1: "操作失敗" });
       }
     }
   },
@@ -281,7 +281,7 @@ const usePlayerStore = create<PlayerState>((set, get) => ({
       await videoRef?.current?.setPositionAsync(newPosition);
     } catch (error) {
       logger.debug("Failed to seek video:", error);
-      Toast.show({ type: "error", text1: "快进/快退失败" });
+      Toast.show({ type: "error", text1: "快轉/倒退失败" });
     }
 
     set({
@@ -307,7 +307,7 @@ const usePlayerStore = create<PlayerState>((set, get) => ({
       get()._savePlayRecord({ introEndTime: undefined }, { immediate: true });
       Toast.show({
         type: "info",
-        text1: "已清除片头时间",
+        text1: "已清除片頭時間",
       });
     } else {
       // Set the time
@@ -316,8 +316,8 @@ const usePlayerStore = create<PlayerState>((set, get) => ({
       get()._savePlayRecord({ introEndTime: newIntroEndTime }, { immediate: true });
       Toast.show({
         type: "success",
-        text1: "设置成功",
-        text2: "片头时间已记录。",
+        text1: "設定成功",
+        text2: "片頭時間已記錄。",
       });
     }
   },
@@ -343,8 +343,8 @@ const usePlayerStore = create<PlayerState>((set, get) => ({
       get()._savePlayRecord({ outroStartTime: newOutroStartTime }, { immediate: true });
       Toast.show({
         type: "success",
-        text1: "设置成功",
-        text2: "片尾时间已记录。",
+        text1: "設定成功",
+        text2: "片尾時間已記錄。",
       });
     }
   },
@@ -495,8 +495,8 @@ const usePlayerStore = create<PlayerState>((set, get) => ({
       logger.error(`[VIDEO_ERROR] No fallback sources available for episode ${currentEpisodeIndex + 1}`);
       Toast.show({ 
         type: "error", 
-        text1: "播放失败", 
-        text2: "所有播放源都不可用，请稍后重试" 
+        text1: "播放失敗", 
+        text2: "所有播放源都不可用，請稍後重試" 
       });
       set({ isLoading: false });
       return;
@@ -527,7 +527,7 @@ const usePlayerStore = create<PlayerState>((set, get) => ({
         
         Toast.show({ 
           type: "success", 
-          text1: "已切换播放源", 
+          text1: "已切換播放源", 
           text2: `正在使用 ${fallbackSource.source_name}` 
         });
       } else {
