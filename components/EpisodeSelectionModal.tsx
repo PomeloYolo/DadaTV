@@ -24,7 +24,7 @@ export const EpisodeSelectionModal: React.FC<EpisodeSelectionModalProps> = () =>
     <Modal visible={showEpisodeModal} transparent={true} animationType="slide" onRequestClose={onClose}>
       <View style={styles.modalContainer}>
         <View style={styles.modalContent}>
-          <Text style={styles.modalTitle}>选择剧集</Text>
+          <Text style={styles.modalTitle}>選擇劇集</Text>
 
           {episodes.length > episodeGroupSize && (
             <View style={styles.episodeGroupContainer}>
