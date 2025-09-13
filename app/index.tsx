@@ -65,7 +65,7 @@ export default function HomeScreen() {
       // 如果还没按过返回键，或距离上次超过2秒
       if (!backPressTimeRef.current || now - backPressTimeRef.current > 2000) {
         backPressTimeRef.current = now;
-        ToastAndroid.show("再按一次返回键退出", ToastAndroid.SHORT);
+        ToastAndroid.show("再按一次返回鍵退出", ToastAndroid.SHORT);
         return true; // 拦截返回事件，不退出
       }
 
@@ -201,7 +201,7 @@ export default function HomeScreen() {
     return (
       <View style={dynamicStyles.headerContainer}>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <ThemedText style={dynamicStyles.headerTitle}>首页</ThemedText>
+          <ThemedText style={dynamicStyles.headerTitle}>首頁</ThemedText>
           <Pressable android_ripple={Platform.isTV || deviceType !== 'tv'? { color: 'transparent' } : { color: Colors.dark.link }} style={{ marginLeft: 20 }} onPress={() => router.push("/live")}>
             {({ focused }) => (
               <ThemedText style={[dynamicStyles.headerTitle, { color: focused ? "white" : "grey" }]}>直播</ThemedText>
@@ -366,7 +366,7 @@ export default function HomeScreen() {
             error={error}
             onEndReached={loadMoreData}
             loadMoreThreshold={LOAD_MORE_THRESHOLD}
-            emptyMessage={selectedCategory?.tags ? "请选择一个子分类" : "该分类下暂无内容"}
+            emptyMessage={selectedCategory?.tags ? "請選擇一個分類" : "該分類下暫無内容"}
             ListFooterComponent={renderFooter}
           />
         </Animated.View>
