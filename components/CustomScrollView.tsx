@@ -26,7 +26,7 @@ const CustomScrollView: React.FC<CustomScrollViewProps> = ({
   error = null,
   onEndReached,
   loadMoreThreshold = 200,
-  emptyMessage = "暂无内容",
+  emptyMessage = "暫無內容",
   ListFooterComponent,
 }) => {
   const scrollViewRef = useRef<ScrollView>(null);
