@@ -182,9 +182,9 @@ class UpdateService {
       if (error instanceof Error) {
         if (error.message.includes('No app found')) {
           Toast.show({ type: "error", text1: "安裝失敗", text2: "未找到可安裝APK的应用，請確保允許安裝未知来源的應用" });
-          throw new Error('未找到可安装APK的应用，請確保允許安裝未知来源的應用');
+          throw new Error('未找到可安装APK的應用，請確保允許安裝未知来源的應用');
         } else if (error.message.includes('permission')) {
-          Toast.show({ type: "error", text1: "安装失敗", text2: "沒有安裝權限，请在设置中允许此应用安装未知来源的应用" });
+          Toast.show({ type: "error", text1: "安装失敗", text2: "沒有安裝權限，請在設置中允許此應用程式安裝權限" });
           throw new Error('沒有安裝權限，請在設定中允許此應用程式安裝未知來源的應用');
         } else {
           Toast.show({ type: "error", text1: "安装失敗", text2: "APK安裝過程中出现錯誤" });
