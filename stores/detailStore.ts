@@ -163,14 +163,14 @@ const useDetailStore = create<DetailState>((set, get) => ({
             } else {
               logger.error(`[ERROR] FALLBACK search found no matching results for "${q}"`);
               set({ 
-                error: `未找到 "${q}" 的播放源，请检查标题或稍后重试`,
+                error: `未找到 "${q}" 的播放源，請檢查標題或稍後重試`,
                 loading: false 
               });
             }
           } catch (fallbackError) {
             logger.error(`[ERROR] FALLBACK search FAILED:`, fallbackError);
             set({ 
-              error: `搜索失败：${fallbackError instanceof Error ? fallbackError.message : '网络错误，请稍后重试'}`,
+              error: `搜索失敗：${fallbackError instanceof Error ? fallbackError.message : '網路錯誤，請稍後重試'}`,
               loading: false 
             });
           }
@@ -213,7 +213,7 @@ const useDetailStore = create<DetailState>((set, get) => ({
           if (enabledResources.length === 0) {
             logger.error(`[ERROR] No enabled resources available for search`);
             set({ 
-              error: "没有可用的视频源，请检查设置或联系管理员",
+              error: "沒有可用的視訊來源，請檢查設定或聯絡管理員",
               loading: false 
             });
             return;
@@ -251,7 +251,7 @@ const useDetailStore = create<DetailState>((set, get) => ({
           if (totalResults === 0) {
             logger.error(`[ERROR] All sources returned 0 results for "${q}"`);
             set({ 
-              error: `未找到 "${q}" 的播放源，请尝试其他关键词或稍后重试`,
+              error: `未找到 "${q}" 的播放源，請嘗試其他關鍵字或稍後重試`,
               loading: false 
             });
           } else {
@@ -260,7 +260,7 @@ const useDetailStore = create<DetailState>((set, get) => ({
         } catch (resourceError) {
           logger.error(`[ERROR] Failed to get resources:`, resourceError);
           set({ 
-            error: `获取视频源失败：${resourceError instanceof Error ? resourceError.message : '网络错误，请稍后重试'}`,
+            error: `取得視訊來源失敗：${resourceError instanceof Error ? resourceError.message : '網路錯誤，請稍後重試'}`,
             loading: false 
           });
           return;
@@ -298,8 +298,8 @@ const useDetailStore = create<DetailState>((set, get) => ({
     } catch (e) {
       if ((e as Error).name !== "AbortError") {
         logger.error(`[ERROR] DetailStore.init caught unexpected error:`, e);
-        const errorMessage = e instanceof Error ? e.message : "获取数据失败";
-        set({ error: `搜索失败：${errorMessage}` });
+        const errorMessage = e instanceof Error ? e.message : "獲取數據失敗";
+        set({ error: `搜索失敗：${errorMessage}` });
       } else {
         logger.info(`[INFO] DetailStore.init aborted by user`);
       }
